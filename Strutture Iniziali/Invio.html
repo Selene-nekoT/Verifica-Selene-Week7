@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="styleInvio.css" rel="stylesheet" id="csfile" type="text/css" />
+</head>
+<body>
+    <div>
+        <form action="Ricevi.html" method="GET">
+            <p>Tabella: <strong>FORM</strong></p>
+            <table width="100%">
+                <tr>
+                    <td>
+                        <label>Nome:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="nome" placeholder="Nome..." />
+                    </td>
+                    <td>
+                        <label>Professione:</label>
+                    </td>
+                    <td>
+                        <select name="professione" style="width:100%">
+                            <option value=""></option>
+                            <optgroup label="Settore Terziario">
+                                <option>Contadino</option>
+                                <option>Mercante</option>
+                            </optgroup>
+                            <optgroup label="Alberghiero">
+                                <option>Cuoco</option>
+                                <option>Cameriere</option>
+                                <option>Front Desk</option>
+                            </optgroup>
+                            <optgroup label="Informatico">
+                                <option>Programmatore</option>
+                                <option>IT</option>
+                                <option>Analyst</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Cognome:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="cognome" placeholder="Cognome..." />
+                    </td>
+                    <td>
+                        <label>Istruzione:</label>
+                    </td>
+                    <td>
+                        <select name="scuola" style="width:100%" >
+                            <option value=""></option>
+                            <option value="elementari">Elementari</option>
+                            <option value="medie">Medie</option>
+                            <option value="superiori">Superiori</option>
+                            <option value="laurea">Laurea</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Età:</label>
+                    </td>
+                    <td>
+                        <input type="number" min="18" name="eta" placeholder="Devi essere maggiorenne..." />
+                    </td>
+                    <!--<td>
+                    </td>-->
+                    <td>
+                        <fieldset style="width:50%">
+                            <legend>Sesso:</legend>
+                            <input type="radio" name="genere" value="femmina" />F
+                            <input type="radio" name="genere" value="maschio" />M <br />
+                            <input type="radio" name="genere" value="nonBinary" />Non Binario
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Email:</label>
+                    </td>
+                    <td>
+                        <input type="email" name="email" placeholder="Email..." />
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Numero:</label>
+                    </td>
+                    <td>
+                        <input type="number" name="numero" placeholder="Numero di telefono..." />
+                    </td>
+                    <!--<td>
+                    </td>-->
+                    <td>
+                        <fieldset style="width:50%">
+                            <legend>Hobby:</legend>
+                            <input type="checkbox" name="sport" value="Sport" />Sport
+                            <input type="checkbox" name="scrittura" value="Scrittura" />Scrittura
+                            <input type="checkbox" name="cinema" value="Cinema" />Cinema
+                        </fieldset>
+                    </td>
+                </tr>
+            </table>
+            <textarea class= "cssMia" rows="5" cols="20" placeholder="Comments" name="commenti"> </textarea>
+            <input type="submit" value="Submit" formtarget="_blank" /> <br />
+            <progress value="70" max="100">Completamento</progress>
+        </form>
+    </div>
+</body>
+</html>

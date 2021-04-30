@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function DemoById(p1) {
+            document.getElementById(p1).style.backgroundColor = "Yellow";
+        }
+
+        function DemoByClass(class1) {
+            let res = document.getElementsByClassName(class1);
+            console.log(res.length);
+            for (let el in res) {
+                res[el].style.backgroundColor = "Red";
+            }
+        }
+
+
+        function ColoraTuttiP() {
+            let paragrafi = document.getElementsByTagName("p");
+            console.log(paragrafi.length);
+            for (let i = 0; i < paragrafi.length; i++) {
+                paragrafi[i].style.color = "Green";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header><h1>Selettori Javascript</h1></header>
+    <p>
+        Dummy Test script
+    </p>
+    <ul>
+        <li class="li-element">
+            First
+        </li>
+        <li class="li-element">
+            Second
+        </li>
+    </ul>
+    <div>
+        <p id="p1">
+            Dummy P test
+        </p>
+    </div>
+    <button onclick="DemoById('p1')"> ChangeColor</button>
+    <button onclick="DemoByClass('li-element')"> CountLI</button>
+    <a href="javascript:ColoraTuttiP()">Colora</a><br />
+
+</body>
+</html>

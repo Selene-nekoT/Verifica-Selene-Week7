@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function Salva() {
+            let storageName = ($('#checkLocalStorage').checked) ? "localStorage" : "sessionStorage";
+            try {
+                //controllo se ha recuperato correttamente il nome segnato
+                let nameStorage = (storageName in window && window[storageName] != null) ? window[storageName] : null;
+
+                //recupero i valori
+                let key = $('#StorageKey').val();
+                let value = $('#StorageValue').val();
+
+                //inserisco nello Storage
+                nameStorage.setItem(key, value);
+
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function Benvenuto() {
+            let storage = window["sessionStorage"];
+            let nomeUtente = storage.getItem("Nome");
+            if (nomeUtente == null) {
+                alert("Benvenuto nuovo utente");
+            } else {
+                alert("Benvenuto " + nomeUtente);
+                //alert($"Benvenuto `{nomeUtente}`");
+            }
+        }
+        function RemoveAll() {
+            let storageName = ($('#checkLocalStorage').checked) ? "localStorage" : "sessionStorage";
+            try {
+                let storage = (storageName in window && window[storageName] != null) ? window[storageName] : null;
+                storage.clear();
+            } catch (e) {
+                alert(e.Message);
+            }
+        }
+
+        function RicercaItem() {
+            let storage = window["sessionStorage"];
+            let selectedKey = $('#StorageKey').val();
+            let value = storage.getItem(selectedKey);
+            if (value == null) {
+                alert("Nessun valore trovato");
+            } else {
+                alert("Chiave: " + selectedKey + "- Valore: " + value);
+            }
+        }
+
+
+    </script>
+</head>
+<body onload="Benvenuto()">
+    <form>
+
+        <input type="radio" id="checkLocalStorage" name="ckStorage" checked="checked" />
+        <label for="checkLocalStorage">Local Storage</label>
+
+        <input type="radio" id="checkSessionStorage" name="ckStorage" />
+        <label for="checkSessionStorage">Session Storage</label>
+        <br />
+        <br />
+        <label>Chiave</label>
+        <input type="text" id="StorageKey" /><br />
+        <label>Valore</label>
+        <input type="text" id="StorageValue" />
+        <br />
+        <button onclick="Salva()">Salva</button>
+        <button onclick="RemoveAll()">Pulisci</button>
+        <button onclick="RicercaItem()">Ricerca Item</button>
+
+    </form>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+</body>
+
+
+</html>

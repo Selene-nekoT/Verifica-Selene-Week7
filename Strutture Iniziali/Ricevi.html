@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+    <title></title>
+</head>
+<body>
+    <script>
+        var archiviodati = [];
+
+        var params = new URLSearchParams(window.location.search)
+        for (var param of params) {
+            var valori = param[1];
+            console.log(valori)
+            archiviodati.push(valori);
+        }
+        console.log(archiviodati);
+
+        let nome = archiviodati[0]; 
+        let cognome = archiviodati[2]; 
+        let eta = archiviodati[4];
+        let professione = archiviodati[1]; 
+        let scuola = archiviodati[3];
+        let commenti = archiviodati[11];
+        let hobby1 = archiviodati[8];
+        let hobby2 = archiviodati[9];
+        let hobby3 = archiviodati[10];
+        let genere = archiviodati[5];
+        let numero = archiviodati[7]; 
+        let email = archiviodati[6]; 
+
+
+        let hobby = "";
+        if (hobby1 == undefined) {
+            hobby = hobby2 + "," + hobby3;
+        } else if (hobby2 == undefined) {
+            hobby = hobby1 + "," + hobby3;
+        } else if (hobby3 == undefined) {
+            hobby = hobby1 + "," + hobby2;
+        } else {
+            hobby = "Nessun hobby";
+        }
+
+        alert("Ciao " + nome + " " + cognome + "! Hai " + eta + "anni ecco che hobby hai: " + hobby);
+        alert(hobby1);
+</script>
+
+    </body>
+
+</html>

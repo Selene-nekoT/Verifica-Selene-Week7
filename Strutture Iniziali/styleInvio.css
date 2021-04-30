@@ -1,0 +1,44 @@
+﻿
+body {
+    background-color: cornflowerblue;
+    /*background-color: rgb(146 24 24);*/
+
+}
+input, select{
+    background-color:lightcyan;
+}
+table {
+    background-color: azure;
+}
+
+div {
+    background-color: skyblue;
+    border:double 5px darkblue;
+}
+p strong{
+    font-size:larger;
+    color:darkslateblue;
+}
+
+* {
+    font-family: 'Times New Roman', Times, serif;
+    /*font-style: italic;*/
+    font-size: medium;
+    color: darkblue;
+    font-weight: bold;
+}
+
+input:hover{
+    color:crimson;
+    font-size: large;
+}
+input:visited{
+    color:InactiveBorder;
+}
+
+.cssMia {
+    font-family:'Comic Sans MS';
+    font-size: small;
+    color:teal;
+    font-style:italic;
+}

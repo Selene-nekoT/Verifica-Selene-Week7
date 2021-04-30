@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>LogIn</title>
+    <style>
+        *{
+            font-family:'Segoe Print';
+        }
+    </style>
+
+    <script>
+        function Change() {
+           // let inputs = document.querySelectorAll("input[type='email'],input[type='password']");
+            let userEmail = document.querySelector("input[type='email']");
+            let password = document.querySelectorAll("input[type='password']");
+            let button = document.querySelector("input[type='submit']");
+            button.disabled = "";
+            //for (let i = 0; i < inputs.length; i++) {
+                //if (inputs[i].value == "") {
+                //    button.disabled = "disabled";
+            //   break;
+            if (password == " " && userEmail == " " ) {
+                button.disabled = "disabled";
+            } 
+        }
+
+        function LoginCompletato() {
+            alert("Login effettuato correttamente!");
+        }
+    </script>
+</head>
+<body>
+    <form method="get" onsubmit="LoginCompletato()">
+        <table>
+            <tr>
+                <td>
+                    <h1>Form di Login</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>USERNAME</label>
+                </td>
+                <td>
+                    <input type="email" onchange="Change()"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>PASSWORD</label>
+                </td>
+                <td>
+                    <input type="password" onchange="Change()"/>
+                </td>
+            </tr>  
+            <tr>
+                <td><br /></td>
+                <td>
+                    <input type="submit" value="Login" disabled="disabled"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
